@@ -7,7 +7,7 @@ public class movemant : MonoBehaviour
     void Start()
     {
         //this.transform.position = this.transform.position + Vector3.forward;
-    }  //¾î¸ù¾î½ºTransformÀÇ Posittion(À§Ä¡) ÇöÀç À§Ä¡     (0,0,1)
+    }  //Transformì˜ Posittion(ìœ„ì¹˜) í˜„ì¬ ìœ„ì¹˜     (0,0,1)
 
     // Update is called once per frame
     void Update()
