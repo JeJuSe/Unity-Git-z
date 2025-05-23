@@ -1,24 +1,23 @@
 using UnityEngine;
 
-public class movemant : MonoBehaviour
+public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 10f;
-    // float moveSpeed1; //*private )
-    void Start()
-    {
-        //this.transform.position = this.transform.position + Vector3.forward;
-    }  //Transform의 Posittion(위치) 현재 위치     (0,0,1)
+    public float moveSpeed = 5f;
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 direction = Vector3.zero;
+        /// Input System (Old - Legacy)
+        /// 입력값에 대한 약속된 시스템
+        /// 이동 -> WASD, 화살표키보드
+        /// 점프 -> Space
+        /// 총쏘기 -> 마우스 왼쪽
 
-        if (Input.GetKey(KeyCode.W)) direction += Vector3.forward;
-        if (Input.GetKey(KeyCode.S)) direction += Vector3.back;
-        if (Input.GetKey(KeyCode.A)) direction += Vector3.left;
-        if (Input.GetKey(KeyCode.D)) direction += Vector3.right;
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-        transform.position += direction.normalized * moveSpeed * Time.deltaTime;
+        Vector3 dir = new Vector3(h, 0, v);
+        Debug.Log($"현재 입력 : {dir}");
+
+        transform.position += dir * moveSpeed * Time.deltaTime;
     }
 }
