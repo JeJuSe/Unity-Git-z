@@ -5,7 +5,7 @@ public class StudyGameobject : MonoBehaviour
 {
     public GameObject prefab;
 
-    void Start()
+    void Awaket()
     {
         CreateAmongus();
     }
